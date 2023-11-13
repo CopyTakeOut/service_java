@@ -86,6 +86,12 @@ public class EmployeeController {
         return Result.success();
     }
 
+
+    /**
+     * 员工信息分页查询
+     * @param employeePageQueryDTO
+     * @return
+     */
     @GetMapping("/page")
     @ApiOperation("员工分页查询")
     public Result<PageResult> page(EmployeePageQueryDTO  employeePageQueryDTO){
@@ -93,12 +99,48 @@ public class EmployeeController {
       PageResult pageResult =  employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
     }
+
+
+    /**
+     * 禁用启用员工账户
+     * @param status  1 启用 0 禁用
+     * @param id 员工ID
+     * @return
+     */
     @PostMapping("/status/{status}")
     @ApiOperation("启用禁用员工账号")
     public Result startOrStop(@PathVariable("status") Integer status,long id){
         log.info("启用禁用员工账号，{},{}",status,id);
         employeeService.startOrStop(status,id);
         return  Result.success();
+    }
+
+
+    /**
+     * 根据ID查询员工信息
+     * @param id  员工ID
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据ID查询员工信息")
+    public Result<Employee> getById(@PathVariable Long id){
+        log.info("根据ID查询员工信息，{}",id);
+       Employee employee = employeeService.getById(id);
+        return Result.success(employee);
+    }
+
+
+    /**
+     * 编辑员工信息
+     * @param employeeDTO
+     * @return
+     */
+    @PutMapping
+    @ApiOperation("编辑员工信息")
+    public  Result update(@RequestBody EmployeeDTO employeeDTO){
+        log.info("编辑员工信息，{}",employeeDTO);
+        employeeService.update(employeeDTO);
+        return Result.success();
     }
 
 }
