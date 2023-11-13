@@ -1,0 +1,84 @@
+
+* 用户层
+node  vue  elment  微信小程序    apache echarts
+
+* 网关层  nginx
+
+* 应用层
+spring-boot   sping-mvc  spring task   httpclient     spring cache
+jwt 阿里云oss   swagger       POI      websocket
+
+* 数据层
+mysql   redis   mybatis   pagehelper   spring data redis
+
+
+* 工具
+git   maven  Junit   postman
+
+
+
+# 前端工程搭建
+
+# 后端工程搭建
+* sky-take-out  maven 父工程 统一管理依赖版本，聚合其他子模块
+* sky-common  子模块 存放公共类，例如：工具类、常量类、异常类
+* sky-pojo 子模块，存放实体类、VO、DTO 等
+* sky-server 子模块 后端服务、存放配置文件 Controller Service Mapper 等
+
+* common  
+** constant
+** context
+** enmueration 枚举
+** exception  自定义异常类
+** json 处理json 转化
+** properties   spring boot 配置类
+** result  后端的返回结果
+** utils   一些工具类
+
+* pojo    普通的java对象,只有属性对应的 getter 和 setter
+** dto    数据传输对象，通常用户程序各层之间传递数据
+** entity 实体，通常和数据库中的表对应
+** vo     视图对象,为前端展示数据提供的对象  
+
+* server 配置文件 配置类 拦截器 controller service mapper 启动类
+** config
+** controller.admin
+** handler
+** interceptor
+** mapper
+**service
+
+
+
+## 文档管理
+
+* yapi 部署 https://juejin.cn/post/6971068351829262343
+
+* mongidb 
+
+
+
+## node 多版本管理
+nvm 常用命令
+● nvm install stable  安装最新稳定版 node
+
+● nvm install <version>  安装指定版本，如：安装v4.4.0，nvm install v4.4.0
+
+● nvm uninstall <version>  删除已安装的指定版本，语法与install类似
+
+● nvm use <version>  切换使用指定的版本node
+
+● nvm ls  列出所有安装的版本
+
+● nvm alias default <version>  如： nvm alias default v11.1.0
+
+
+# 异常处理 
+
+# JWT令牌 解析出员工ID后，如何传递给Service的save方法？
+
+* ThreadLocal 并不是一个线程，是一个线程的局部变量。他可以每个线程提供单独一份存储空间，具有线程隔离的效果
+
+
+
+# Pagehelper 插件
