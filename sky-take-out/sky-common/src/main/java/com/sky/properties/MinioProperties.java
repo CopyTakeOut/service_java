@@ -5,14 +5,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "sky.alioss")
+@ConfigurationProperties(prefix = "sky.minio")
 @Data
-public class AliOssProperties {
-
+public class MinioProperties {
     private String endpoint;
-    private String accessKeyId;
-    private String accessKeySecret;
+    private String accessKey;
+    private String secretKey;
     private String bucketName;
-
-
 }

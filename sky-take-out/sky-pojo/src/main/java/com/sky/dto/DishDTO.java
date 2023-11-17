@@ -18,7 +18,7 @@ public class DishDTO implements Serializable {
     //菜品价格
     private BigDecimal price;
     //图片
-    private String image;
+    private String image = "http://localhost:8888/img/reimg/1.png";
     //描述信息
     private String description;
     //0 停售 1 起售
